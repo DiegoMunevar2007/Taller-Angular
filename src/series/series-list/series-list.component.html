@@ -1,5 +1,5 @@
 <table class="table">
-  <caption id="season-average">Seasons average: </caption>
+  <caption id="season-average">Seasons average: {{promedioSeries}}</caption>
   <thead class="border-bottom border-top">
       <tr>
           <th scope="col">#</th>
@@ -9,6 +9,11 @@
       </tr>
   </thead>
   <tbody class="table-light" id="content">
-    
+    <tr *ngFor="let serie of seriesArray" (click)="serieSeleccionada(serie)">
+      <td>{{ serie.id }}</td>
+      <td>{{ serie.name }}</td>
+      <td>{{ serie.channel }}</td>
+      <td>{{ serie.seasons }}</td>
+    </tr>
   </tbody>
 </table>
